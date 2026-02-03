@@ -1,12 +1,12 @@
 export default {
-  title: "DJ Adams",
-  url: "https://qmacro.org",
-  image: "site-image.png",
+  title: "Kevin Riedelsheimer",
+  url: "https://kevinriedelsheimer.com",
+  image: "me.png",
   language: "en",
-  description: "Reserving the right to be wrong.",
+  description: "Praise the Omnissiah — may your code compile and your builds succeed.",
   author: {
-    name: "DJ Adams",
-    email: "qmacro@gmail.com",
-    url: "https://qmacro.org/about/"
+    name: "Kevin Riedelsheimer",
+    email: "kevin.muessig@gmail.com",
+    url: "https://kevinriedelsheimer.com/about/"
   }
-}
+};

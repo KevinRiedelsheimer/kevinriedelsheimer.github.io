@@ -4,7 +4,7 @@
 
 set -eo pipefail
 
-declare bloghome="$WORK/gh/github.com/qmacro/qmacro.github.io"
+declare bloghome="$WORK/gh/github.com/kevinriedelsheimer/kevinriedelsheimer.github.io"
 
 preview() {
 

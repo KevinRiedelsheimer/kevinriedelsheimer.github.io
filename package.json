@@ -1,52 +1,52 @@
 {
-	"name": "qmacro-website",
-	"version": "9.0.0",
-	"description": "My blog website using the Eleventy site generator.",
-	"type": "module",
-	"scripts": {
-		"build": "npx @11ty/eleventy",
-		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
-		"build-ghpages": "npx @11ty/eleventy",
-		"start": "npx @11ty/eleventy --serve --quiet --port=5005",
-		"start-ghpages": "npx @11ty/eleventy --serve --quiet --port=5005",
-		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
-		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/11ty/eleventy-base-blog.git"
-	},
-	"author": {
-		"name": "DJ Adams",
-		"email": "qmacro@gmail.com",
-		"url": "https://qmacro.org"
-	},
-	"license": "MIT",
-	"engines": {
-		"node": ">=18"
-	},
-	"funding": {
-		"type": "opencollective",
-		"url": "https://opencollective.com/11ty"
-	},
-	"bugs": {
-		"url": "https://github.com/11ty/eleventy-base-blog/issues"
-	},
-	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
-	"devDependencies": {
-		"@11ty/eleventy": "^3.1.2",
-		"@11ty/eleventy-img": "^6.0.4",
-		"@11ty/eleventy-navigation": "^1.0.5",
-		"@11ty/eleventy-plugin-rss": "^2.0.4",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-		"cross-env": "^10.1.0",
-		"luxon": "^3.7.2",
-		"prismjs": "^1.30.0",
-		"zod": "^4.3.6",
-		"zod-validation-error": "^5.0.0"
-	},
-	"dependencies": {
-		"@zachleat/heading-anchors": "^1.0.5"
-	}
+  "name": "kevinriedelsheimer.com",
+  "version": "1.0.0",
+  "description": "Kevin Riedelsheimer's personal blog built with Eleventy.",
+  "type": "module",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --quiet --port=5005",
+    "start-ghpages": "npx @11ty/eleventy --serve --quiet --port=5005",
+    "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KevinRiedelsheimer/kevinriedelsheimer.github.io.git"
+  },
+  "author": {
+    "name": "Kevin Riedelsheimer",
+    "email": "kevin.muessig@gmail.com",
+    "url": "https://kevinriedelsheimer.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/11ty"
+  },
+  "bugs": {
+    "url": "https://github.com/KevinRiedelsheimer/kevinriedelsheimer.github.io/issues"
+  },
+  "homepage": "https://kevinriedelsheimer.com",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-navigation": "^1.0.5",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "cross-env": "^10.1.0",
+    "luxon": "^3.7.2",
+    "prismjs": "^1.30.0",
+    "zod": "^4.3.6",
+    "zod-validation-error": "^5.0.0"
+  },
+  "dependencies": {
+    "@zachleat/heading-anchors": "^1.0.5"
+  }
 }

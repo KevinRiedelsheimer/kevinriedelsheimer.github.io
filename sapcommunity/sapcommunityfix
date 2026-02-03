@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-content=$(cat)
-echo "$content" | sed -E "s/‘|’/'/g;s/“|”/\"/g;s/—|–/-/g" | ./savepost "$@"

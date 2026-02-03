@@ -8,7 +8,7 @@ import prismCds from "./prism-cds.js";
 import pluginFilters from "./_config/filters.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-export default async function(eleventyConfig) {
+export default async function (eleventyConfig) {
   // Drafts, see also _data/eleventyDataSchema.js
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
     if (data.draft) {
@@ -82,11 +82,11 @@ export default async function(eleventyConfig) {
     },
     metadata: {
       language: "en",
-      title: "DJ Adams",
-      subtitle: "Reserving the right to be wrong",
-      base: "https://qmacro.org/blog/",
+      title: "Kevin Riedelsheimer",
+      subtitle: "Praise the Omnissiah — may your code compile and your builds succeed.",
+      base: "https://kevinriedelsheimer.com/blog/",
       author: {
-        name: "DJ Adams"
+        name: "Kevin Riedelsheimer"
       }
     }
   });

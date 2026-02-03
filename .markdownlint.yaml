@@ -1,11 +1,26 @@
+# Heading style - use ATX style (# Heading) not Setext (underlines)
 MD003:
   style: atx
+
+# Unordered list style - use dashes (-) not asterisks (*) or plus (+)
 MD004:
   style: dash
+
+# Line length - disabled, allow long lines
 MD013: false
+
+# Blanks around headings - no blank line required above headings
 MD022:
   lines_above: 0
+
+# Trailing punctuation in headings - disabled, allow "What?" style headings
 MD026: false
+
+# Inline HTML - disabled, allow HTML mixed with Markdown
 MD033: false
+
+# Emphasis style - disabled, no enforcement on * vs _ for emphasis
 MD049: false
+
+# Link fragments - disabled, allow potentially broken internal links
 MD051: false
