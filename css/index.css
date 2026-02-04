@@ -103,6 +103,23 @@ img[src$=".svg"] {
   height: auto;
   max-width: none;
 }
+
+/* Profile and content images */
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile image specifically - smaller on all screens */
+main img[alt*="Kevin"],
+main img[alt*="Picture"] {
+  max-width: min(300px, 80vw);
+  display: block;
+  margin: 1.5rem 0;
+}
+
 video,
 iframe {
   width: 100%;
