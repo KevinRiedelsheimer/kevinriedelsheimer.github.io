@@ -8,7 +8,7 @@ title: About
 
 # About
 
-![Picture of Kevin](./images/me.png)
+![Picture of Kevin](/images/me.png)
 
 I'm a **Developer Advocate / Product Expert at [SAP](https://developers.sap.com/developer-advocates.html)**.
 
