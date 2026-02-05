@@ -3,13 +3,13 @@ title: Confused by all the Agent Frameworks - Don't be anymore!
 date: 2026-02-04
 draft: false
 tags:
-  - AI
+  - ai
   - Agents
-  - LangGraph
-  - LlamaIndex
-  - crewAI
-  - Google_ADK
-  - AutoGen
+  - langgraph
+  - llamaindex
+  - crewai
+  - google adk
+  - autogen
 description: In this blog post I want to talk about the different agent frameworks out there and how they can be compared on a higher level.
 ---
 
