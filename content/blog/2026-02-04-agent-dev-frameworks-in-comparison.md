@@ -4,11 +4,11 @@ date: 2026-02-04
 draft: false
 tags:
   - AI
-  - AI Agents
+  - Agents
   - LangGraph
   - LlamaIndex
   - crewAI
-  - Google ADK
+  - Google_ADK
   - AutoGen
 description: In this blog post I want to talk about the different agent frameworks out there and how they can be compared on a higher level.
 ---
