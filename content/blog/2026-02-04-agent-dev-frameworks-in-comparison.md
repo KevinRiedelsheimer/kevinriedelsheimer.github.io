@@ -38,7 +38,7 @@ MCP gives you a highly standardized protocol that allows you to create a clear i
 
 The diagram below gives a high-level overview on how MCP works:
 
-<img src="../images/2026/2026-02-04-agent-dev-frameworks-in-comparison/how_mcp_works.png" alt="how-mcp-works" width="600"/>
+<img src="/images/2026/2026-02-04-agent-dev-frameworks-in-comparison/how_mcp_works.png" alt="how-mcp-works" width="600"/>
 
 ## What are the core capabilities of an agent framework?
 
@@ -126,7 +126,7 @@ Let's take a look at an example to better understand what that means:
 
 We assume we want to build an AI application that can research, book, and build an itinerary summarization for a business trip.
 
-<img src="../images/2026/2026-02-04-agent-dev-frameworks-in-comparison/langgraph_agent_example.png" alt="LangGraph Agent Example" width="600"/>
+<img src="/images/2026/2026-02-04-agent-dev-frameworks-in-comparison/langgraph_agent_example.png" alt="LangGraph Agent Example" width="600"/>
 
 We define a new process that should process incoming travel requests. That process has three actions available: `Research`, `Book`, and `Summarize`.
 
