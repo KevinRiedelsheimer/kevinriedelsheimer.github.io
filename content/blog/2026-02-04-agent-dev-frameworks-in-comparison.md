@@ -29,7 +29,7 @@ For me I wanted to understand what the strengths, weaknesses, and use cases are 
 
 Before we dive into the different frameworks and their specifics, let's talk about what an AI agent is. The basic idea behind an agent is that it is a piece of software allowing an LLM to use different types of tools. LLMs are amazing in understanding natural language and producing natural language to react on given input prompts. If you look at LLMs, they are the brain of the operation but we need a body to do the hard labor. This is where agents come into play. Agents allow the LLM to access different resources and tools to execute tasks, gather information or trigger other agents to do some work with so called agent workflows.
 
-The LLMs can directly interact with an agent or multiple agents if they are known to the LLM. You can make agents known to an LLM through different types of tools like an agent supported client or a cloud landscape which interfaces with the LLM.
+The LLMs can directly interact with an agent or multiple agents if they are known to the LLM. You can make agents known to an LLM through different types of tools like an agent supported client or a cloud landscape which interfaces with the LLM. With agents, LLMs can now control an application workflows. Agents might need to call certain tools, gather resources or use different prompts based on the state. That is why we need frameworks to build this orchestration properly under a human-controlled environment.
 
 The agents can then access different tools, resources or other agents to complete their task. In the past this step could be cumbersome because there was no standard interfacing protocol defining on how an agent would interact with the before-mentioned parts. To solve this, Anthropic created a protocol which should standardize the interfaces. The Model-Context-Protocol (MCP) was born.
 
@@ -52,6 +52,39 @@ The essence of every agent frameworks are:
 Every framework we'll discuss implements these capabilities differently, and understanding these differences is the key to choosing the right tool for your project.
 
 ## Comparing major agent frameworks
+
+### LangGraph
+
+[LangGraph](https://www.langchain.com/langgraph) is being developed by the LangChain team. It is designed for building stateful, multi-agent applications. LangGraph provides you with a low-level orchestration framework and runtime. It's main purpose is agent orchestration and so allows you to manage and deploy stateful agents. LangGraph is an MIT-licensed open-source library and it is free to use.
+
+LangGraph is designed for complex and enterprise-ready use cases. Through it's low-level APIs, you have full control over the orchestration process.
+
+As the name suggests, LangGraph orchestrates agents via a graph. The nodes can be agents or tools and the edges define their communication route.
+
+Let's take a look at an example to better understand what that means:
+
+We assume we want to build an AI application that can research, book, and build an itinerary summarization for a business trip.
+
+![LangGraph_Agent_Example](../images/2026/2026-02-04-agent-dev-frameworks-in-comparison/langgraph_agent_example.png)
+
+We define a new process that should process incoming travel requests. That process has three actions available: `Research`, `Book`, and `Summarize`.
+
+Each of these actions are defined as nodes. Behind each of these actions can be an agent performing the action. All nodes have access to the application's state, they can read and write into that state. The initial node that triggers the process uses an LLM to reason which node should be contacted. The lines inbetween are called edges and they define the communication between the nodes. As you can see, the state is global within that process, and available to all nodes.
+
+Before we continue to the other frameworks, let's talk quickly about the difference between LangGraph and LangChain.
+
+LangGraph is a framework build on top of LangChain. LangChain provides a broad array of APIs for working with LLMs. It provides you with tools, chains, memory management APIs, and capabilities of building agents. LangGraph comes into play to connect these tools with each other. It helps you to manage and orchestrate all the moving pieces, and it allows for building a multi-agent flow.
+
+**Progamming Language support**: Python + JavaScript/TypeScript
+
+Summary:
+
+- LangGraph provides low-level APIs to orchestrate and manage stateful multi-agent workflows.
+- It provides ways of managing memory
+- MIT licensed and open-source
+- Fit for complex and enterprise scale AI applications
+
+## CrewAI
 
 ## Wrapping up
 
