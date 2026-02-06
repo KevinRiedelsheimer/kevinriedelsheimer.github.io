@@ -61,7 +61,12 @@ LLMs can interact with agents based on different patterns.
 An LLM receives an input prompt and, based on the prompt, it reasons about what to do. Through reasoning, it decides on an action, what tool to execute, and observes the result to iterate over decision-making. This is the most used pattern in agent frameworks today.
 
 ```
-Thought → Action → Observation → Thought → Action → ...
+1. Thought
+2. Action
+3. Observation
+4. Thought
+5. Action
+6. repeat
 ```
 
 Let's take a look at an example:
@@ -215,7 +220,7 @@ The extension layer allows you to use default extensions by Microsoft or build y
 **Capabilities**:
 
 - Multi-agent conversations
-- Human-AI and AI-AI collaboration
+- Human/AI and AI/AI collaboration
 - Built-in code execution
 - Group chat patterns
 - Automatic agent replies
