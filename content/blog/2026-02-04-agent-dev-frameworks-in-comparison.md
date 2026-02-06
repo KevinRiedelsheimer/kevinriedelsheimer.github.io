@@ -90,7 +90,7 @@ An LLM creates a complete plan upfront before it executes any actions. The plan 
 
 ### Multi-Agent Orchestration
 
-Multi-agent orchestration allows for multiple agents to communicate with each other through natural language messages. Tasks get delegated to agents through an LLM—"a manager LLM delegates tasks to specialized worker agents." The individual agents are specialized in what they are doing; they execute individually and pass on their result to the LLM or to the next agent. This pattern allows for multiple agents to work simultaneously, which is very powerful. In the end, the results are aggregated by the orchestrator.
+Multi-agent orchestration allows for multiple agents to communicate with each other through natural language messages. Tasks get delegated to agents through an LLM - "a manager LLM delegates tasks to specialized worker agents." The individual agents are specialized in what they are doing; they execute individually and pass on their result to the LLM or to the next agent. This pattern allows for multiple agents to work simultaneously, which is very powerful. In the end, the results are aggregated by the orchestrator.
 
 ### Memory-Augmented
 
@@ -332,7 +332,7 @@ Some of the use cases can be:
 
 ## Wrapping up
 
-When I started this research, I felt pretty overwhelmed by all the different agent frameworks out there. But after diving deep into each one, I've realized something important: there's no single "best" framework—just the right one for what you're trying to build.
+When I started this research, I felt pretty overwhelmed by all the different agent frameworks out there. But after diving deep into each one, I've realized something important: there's no single "best" framework, just the right one for what you're trying to build.
 
 Here's what I've learned: If you need complex workflows with full control over state and branching logic, **LangGraph** is your friend. It has a learning curve, but the power you get is worth it. If you want to quickly build a team of specialized agents without getting into the weeds, **crewAI** makes it super simple with its role-based approach. For projects where agents need to autonomously talk to each other and execute code, **AutoGen** is fantastic. If you're already on Google Cloud and working with Gemini, **Google ADK** gives you everything managed and ready to scale. And if your agents need to work with tons of documents and data, **LlamaIndex** is unbeatable.
 
@@ -342,7 +342,7 @@ Of course, there might also be an aspect of choosing a framework based on the pr
 
 My honest advice? Don't stress about picking the "perfect" framework. Start with what fits your current project and tech stack. I started with LangGraph because I already knew it, and that's totally fine! Build something, break it, learn the patterns. Those skills will transfer. If you are completely unsure what you want to do, you can always choose a learning playground to understand the concepts. One is [SwarmAI](https://www.swarmai.chat/), which allows you to build and work with multi-agent collaboration tools out of the box. This is a great no-code solution to learn.
 
-This space is moving fast! New frameworks, protocols like MCP, better integrations—it's all happening now. But the fundamentals we've covered here will stick around. Understanding how agents work, how they communicate, and how to orchestrate them properly will hopefully help you in the future.
+This space is moving fast! New frameworks, protocols like MCP, better integrations, it's all happening now. But the fundamentals we've covered here will stick around. Understanding how agents work, how they communicate, and how to orchestrate them properly will hopefully help you in the future.
 
 So pick a framework, start building, and don't be afraid to experiment. I'm still learning too, and honestly, that's the fun part. If you end up building something cool, I'd love to hear about it!
 
