@@ -5,7 +5,7 @@ updated:
 draft: false
 tags:
   - ai
-  - Agents
+  - agents
   - langgraph
   - llamaindex
   - crewai
