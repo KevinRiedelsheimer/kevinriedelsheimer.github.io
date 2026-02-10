@@ -192,6 +192,15 @@ p {
   line-height: 1.5;
 }
 
+/* Home page introduction */
+main > p:first-of-type {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
 li {
   line-height: 1.5;
 }

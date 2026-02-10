@@ -116,6 +116,7 @@ export default async function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addPlugin(pluginFilters);
+
   // Table of Contents plugin
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ['h2', 'h3'],
@@ -125,15 +126,14 @@ export default async function (eleventyConfig) {
     flat: false
   });
 
-  // Configure markdown-it-anchor for heading IDs
+  // Configure markdown-it-anchor for heading IDs (without visible anchors)
   eleventyConfig.amendLibrary("md", mdLib => {
     mdLib.use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.ariaHidden({
-        placement: 'after'
-      }),
+      permalink: markdownItAnchor.permalink.headerLink(),
       slugify: eleventyConfig.getFilter("slugify")
     });
   });
+
   eleventyConfig.addPlugin(IdAttributePlugin, {
     // by default we use Eleventy’s built-in `slugify` filter:
     // slugify: eleventyConfig.getFilter("slugify"),
