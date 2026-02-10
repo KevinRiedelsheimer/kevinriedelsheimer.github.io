@@ -530,6 +530,80 @@ header {
   margin-bottom: 1.5rem;
 }
 
+.metadata-separator {
+  color: var(--text-color-muted);
+  user-select: none;
+}
+
+.updated-date {
+  color: var(--accent-color-secondary);
+  font-style: italic;
+}
+
+/* Related Posts */
+.related-posts {
+  margin: 3rem 0 2rem;
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.related-posts h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--accent-color);
+}
+
+.related-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.related-post-item {
+  border-left: 3px solid var(--accent-color);
+  padding-left: 1rem;
+  transition: border-color 0.2s;
+}
+
+.related-post-item:hover {
+  border-left-color: var(--accent-color-secondary);
+}
+
+.related-post-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.related-post-title {
+  color: var(--text-color);
+  font-weight: 500;
+  flex: 1;
+}
+
+.related-post-date {
+  color: var(--text-color-muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.related-post-link:hover .related-post-title {
+  color: var(--accent-color);
+}
+
+/* Comments Section */
+.post-comments {
+  margin: 2rem 0;
+}
+
 blockquote {
   margin-top: 0px;
   margin-left: 0px;

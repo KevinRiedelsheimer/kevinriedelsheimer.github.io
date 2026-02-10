@@ -7,7 +7,11 @@ layout: layouts/base.njk
 <h1>{{ title }}</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+	<li><time datetime="{{ page.date | htmlDateString }}">Published: {{ page.date | readableDate }}</time></li>
+	{% if updated and updated != page.date %}
+	<li><time datetime="{{ updated | htmlDateString }}" class="updated-date">Updated: {{ updated | readableDate }}</time></li>
+	{% endif %}
+	<li class="metadata-separator">•</li>
 	<li>{{ content | readingTime }} min read</li>
 </ul>
 <ul class="post-metadata">
@@ -100,7 +104,44 @@ document.addEventListener('DOMContentLoaded', function() {
 	</button>
 </div>
 
-{% include "utterances.html" %}
+<!-- Related Posts -->
+{% if tags %}
+{%- set relatedPosts = [] %}
+{%- for post in collections.posts | reverse %}
+	{%- if post.url != page.url %}
+		{%- set matchCount = 0 %}
+		{%- for tag in post.data.tags %}
+			{%- if tag in tags %}
+				{%- set matchCount = matchCount + 1 %}
+			{%- endif %}
+		{%- endfor %}
+		{%- if matchCount > 0 %}
+			{%- set relatedPosts = (relatedPosts.push({post: post, matches: matchCount}), relatedPosts) %}
+		{%- endif %}
+	{%- endif %}
+{%- endfor %}
+
+{%- if relatedPosts.length > 0 %}
+<section class="related-posts">
+	<h2>Related Posts</h2>
+	<ul class="related-posts-list">
+	{%- for item in relatedPosts | sort(attribute='matches') | reverse | head(3) %}
+		<li class="related-post-item">
+			<a href="{{ item.post.url }}" class="related-post-link">
+				<span class="related-post-title">{{ item.post.data.title }}</span>
+				<span class="related-post-date">{{ item.post.data.page.date | readableDate }}</span>
+			</a>
+		</li>
+	{%- endfor %}
+	</ul>
+</section>
+{%- endif %}
+{% endif %}
+
+<!-- Comments and Reactions -->
+<div class="post-comments">
+	<script src="https://giscus.app/client.js" data-repo="kevinriedelsheimer/kevinriedelsheimer.github.io" data-repo-id="R_kgDOREESBQ" data-category="Announcements" data-category-id="DIC_kwDOREESBc4C2JFv" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script>
+</div>
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
