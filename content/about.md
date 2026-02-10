@@ -25,11 +25,11 @@ _Praise the Omnissiah — may your code compile and your builds succeed._
 
 I share my thoughts, tutorials, and tech explorations on this [blog](/blog/). Topics I'm passionate about include:
 
+- iOS Development
 - Agentic AI
 - Cloud technologies
 - Developer tools and workflows
 - SAP Cloud Application Programming Model
-- iOS Development
 - And whatever else catches my interest!
 
 ---
