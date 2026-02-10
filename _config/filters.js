@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
@@ -45,4 +45,13 @@ export default function(eleventyConfig) {
 	eleventyConfig.addFilter("sortAlphabetically", strings =>
 		(strings || []).sort((b, a) => b.localeCompare(a))
 	);
+
+	// Calculate reading time
+	eleventyConfig.addFilter("readingTime", (content) => {
+		const wordsPerMinute = 200;
+		const textContent = content.replace(/<\/?[^>]+(>|$)/g, ""); // Strip HTML tags
+		const wordCount = textContent.split(/\s+/).filter(word => word.length > 0).length;
+		const readingTime = Math.ceil(wordCount / wordsPerMinute);
+		return readingTime;
+	});
 };

@@ -5,7 +5,7 @@
     "JetBrains Mono", "Fira Code", Consolas, Menlo, Monaco, monospace;
 }
 
-/* Theme colors - Technical/Dev Blog */
+/* Theme colors - Technical/Dev Blog - Dark mode (default) */
 :root {
   --color-gray-20: #30363d;
   --color-gray-50: #6e7681;
@@ -30,8 +30,32 @@
   --syntax-tab-size: 2;
 }
 
+/* Light theme - explicit override */
+:root[data-theme="light"] {
+  --color-gray-20: #d1d5db;
+  --color-gray-50: #9ca3af;
+  --color-gray-90: #1f2937;
+
+  --background-color: #f9fafb;
+  --background-color-secondary: #f3f4f6;
+  --surface-color: #ffffff;
+  --surface-color-hover: #f3f4f6;
+
+  --text-color: var(--color-gray-90);
+  --text-color-muted: #6b7280;
+  --text-color-link: #059669;
+  --text-color-link-active: #10b981;
+  --text-color-link-visited: #7c3aed;
+
+  --accent-color: #059669;
+  --accent-color-secondary: #d97706;
+  --border-color: #e5e7eb;
+  --terminal-prompt: #059669;
+}
+
+/* Respect system preference if no manual selection */
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     --color-gray-20: #d1d5db;
     --color-gray-50: #9ca3af;
     --color-gray-90: #1f2937;
@@ -52,6 +76,38 @@
     --border-color: #e5e7eb;
     --terminal-prompt: #059669;
   }
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-color-hover);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-icon {
+  display: inline-block;
+  line-height: 1;
 }
 
 /* Global stylesheet */
@@ -422,6 +478,9 @@ header {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.post-metadata:last-of-type {
+  margin-bottom: 1.5rem;
 }
 .post-metadata time {
   margin-right: 1em;

@@ -13,6 +13,8 @@ tags:
 description: In this blog post I want to talk about the different agent frameworks out there and how they can be compared on a higher level.
 ---
 
+# Introduction
+
 Artificial Intelligence is such a vast and huge beast with switching hype topics every couple of months. For someone who is coming into this world it can be overwhelming and discouraging. If you feel like this, don't worry, you are not alone. I do feel the same way every now and then. This feeling came to me just recently when I wanted to build a new workshop around AI Agents and Agent orchestration. Let's dive into some of my findings from my research.
 
 > NOTE: What this blog post is not -> A detailed introduction to every multi-agent orchestration framework.
