@@ -16,7 +16,13 @@ Introduction
 
 ## Title
 
-Stuff
+```swift
+let test = 20
+
+function letustest() -> String{
+  return "Hey Code appears"
+}
+```
 
 ## Wrapping up
 

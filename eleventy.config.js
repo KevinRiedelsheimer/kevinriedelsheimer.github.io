@@ -61,8 +61,7 @@ export default async function (eleventyConfig) {
 
   // Official plugins
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-    preAttributes: { tabindex: 0 },
-    init: prismCds
+    preAttributes: { tabindex: 0 }
   });
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(HtmlBasePlugin);
