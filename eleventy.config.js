@@ -4,6 +4,8 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 // import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import prismCds from "./prism-cds.js";
+import pluginTOC from "eleventy-plugin-toc";
+import markdownItAnchor from "markdown-it-anchor";
 
 import pluginFilters from "./_config/filters.js";
 
@@ -114,7 +116,24 @@ export default async function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addPlugin(pluginFilters);
+  // Table of Contents plugin
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ['h2', 'h3'],
+    wrapper: 'nav',
+    wrapperClass: 'table-of-contents',
+    ul: true,
+    flat: false
+  });
 
+  // Configure markdown-it-anchor for heading IDs
+  eleventyConfig.amendLibrary("md", mdLib => {
+    mdLib.use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: 'after'
+      }),
+      slugify: eleventyConfig.getFilter("slugify")
+    });
+  });
   eleventyConfig.addPlugin(IdAttributePlugin, {
     // by default we use Eleventy’s built-in `slugify` filter:
     // slugify: eleventyConfig.getFilter("slugify"),

@@ -127,8 +127,74 @@
 					const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 					setTheme(newTheme);
 				});
+
+				// Add copy buttons to code blocks
+				document.querySelectorAll('pre').forEach(function(pre) {
+					const button = document.createElement('button');
+					button.className = 'code-copy-button';
+					button.textContent = 'Copy';
+					button.setAttribute('aria-label', 'Copy code');
+					
+					button.addEventListener('click', function() {
+						const code = pre.querySelector('code');
+						const text = code ? code.textContent : pre.textContent;
+						
+						navigator.clipboard.writeText(text).then(function() {
+							button.textContent = 'Copied!';
+							button.classList.add('copied');
+							
+							setTimeout(function() {
+								button.textContent = 'Copy';
+								button.classList.remove('copied');
+							}, 2000);
+						}).catch(function(err) {
+							console.error('Failed to copy:', err);
+						});
+					});
+					
+					pre.appendChild(button);
+				});
 			});
+
+			// Copy link to clipboard function for share button
+			function copyToClipboard(text) {
+				navigator.clipboard.writeText(text).then(function() {
+					const feedback = event.target.closest('.copy-link').querySelector('.copy-feedback');
+					feedback.classList.add('show');
+					setTimeout(function() {
+						feedback.classList.remove('show');
+					}, 2000);
+				}).catch(function(err) {
+					console.error('Failed to copy link:', err);
+				});
+			}
+
+			// Scroll to top button
+			const scrollTopBtn = document.getElementById('scroll-top-btn');
+			if (scrollTopBtn) {
+				window.addEventListener('scroll', function() {
+					if (window.pageYOffset > 300) {
+						scrollTopBtn.classList.add('visible');
+					} else {
+						scrollTopBtn.classList.remove('visible');
+					}
+				});
+
+				scrollTopBtn.addEventListener('click', function() {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				});
+			}
 		</script>
+
+		<!-- Scroll to Top Button -->
+		<button id="scroll-top-btn" class="scroll-top-button" aria-label="Scroll to top">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="18 15 12 9 6 15"></polyline>
+			</svg>
+		</button>
 
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
 	</body>

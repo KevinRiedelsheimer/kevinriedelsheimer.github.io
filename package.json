@@ -41,7 +41,9 @@
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "cross-env": "^10.1.0",
+    "eleventy-plugin-toc": "^1.1.5",
     "luxon": "^3.7.2",
+    "markdown-it-anchor": "^9.2.0",
     "prismjs": "^1.30.0",
     "zod": "^4.3.6",
     "zod-validation-error": "^5.0.0"
