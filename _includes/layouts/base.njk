@@ -49,9 +49,6 @@
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
-		{#- Add the heading-anchors web component to the JavaScript bundle #}
-		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
-
 		<!-- Google Analytics 4 -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R7T5QPTZJQ"></script>
 		<script>
@@ -85,9 +82,7 @@
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
+			{{ content | safe }}
 		</main>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->

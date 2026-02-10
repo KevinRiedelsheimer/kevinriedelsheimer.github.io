@@ -13,7 +13,7 @@ layout: layouts/base.njk
 	<li class="metadata-separator">•</li>
 	<li>{{ content | readingTime }} min read</li>
 </ul>
-<ul class="post-metadata">
+<ul class="post-metadata post-tags">
 	{%- for tag in tags | filterTagList %}
 	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>

@@ -635,6 +635,9 @@ header {
 .post-description-main {
   font-style: normal;
   color: var(--text-color-muted);
+  margin-top: 0;
+  padding-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .postlist-item > .post-tag {
@@ -649,9 +652,16 @@ header {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 0.5rem;
 }
 .post-metadata:last-of-type {
-  margin-bottom: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.post-tags {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0 !important;
 }
 
 .metadata-separator {
