@@ -2,13 +2,18 @@
 title: A Stateful Code Review Agent with LangGraph and the SAP Cloud SDK for AI
 date: 2026-06-08
 draft: false
-permalink: /blog/posts/2026/02/04/building-your-first-ai-agent-with-langgraph-and-the-sap-cloud-sdk-for-ai/
+permalink: /blog/posts/2026/06/08/building-your-first-ai-agent-with-langgraph-and-the-sap-cloud-sdk-for-ai/
 tags:
   - ai
   - ai-agents
   - langgraph
   - SAP BTP
 description: A practical walkthrough of a LangGraph-based code review agent using SAP Cloud SDK for AI, including tool use, state management, and agent-driven tool selection.
+series:
+  key: langgraph-code-review-agents
+  title: Code Review Agents with LangGraph
+  part: 1
+  label: Single-Agent Foundations
 ---
 
 # Introduction
@@ -18,6 +23,12 @@ AI agents are everywhere these days, but building one that actually works reliab
 This post walks through a code review agent built with LangGraph, with an emphasis on letting the model decide when to use tools instead of hard-coding a rigid script.
 
 > NOTE: This post focuses on building a single agent. If you want to take the next step into coordinated specialist agents, I cover that in [Building Multi-Agent LangGraph Flows with SAP Cloud SDK for AI](./2026-02-12-multi-agent-langgraph-flows.md).
+
+This article is part 1 of a 4-part series on building code review agents with LangGraph:
+
+- [Part 2: Multi-Agent LangGraph Flows with SAP Cloud SDK for AI](./2026-02-12-multi-agent-langgraph-flows.md)
+- [Part 3: GitHub MCP for LangGraph Code Review Agents](./2026-02-14-github-mcp-code-review.md)
+- [Part 4: Enhancing LangGraph Code Review Agents with Skills](./2026-02-16-agent-skills-for-code-review.md)
 
 ## Why LangGraph?
 
@@ -375,6 +386,8 @@ The key takeaways:
 If you want an open source variant later, you do not need to redesign the agent. Keep the LangGraph state, nodes, and tools the same, and swap the model layer for a LangChain-compatible open source backend such as Ollama. In practice, that mostly means replacing the `ChatOpenAI` initialization, pointing it at your local or self-hosted model, and re-testing tool-calling behavior because open source models vary more in how reliably they request tools.
 
 If you want to keep going from here, the next step is [Building Multi-Agent LangGraph Flows with SAP Cloud SDK for AI](./2026-02-12-multi-agent-langgraph-flows.md), where several specialized agents work together on a more complex review workflow.
+
+After that, the series continues with [GitHub MCP for LangGraph Code Review Agents](./2026-02-14-github-mcp-code-review.md), which moves the workflow onto real pull requests, and [Enhancing LangGraph Code Review Agents with Skills](./2026-02-16-agent-skills-for-code-review.md), which focuses on reusable guidance and domain-specific enhancements.
 
 ## Resources
 
