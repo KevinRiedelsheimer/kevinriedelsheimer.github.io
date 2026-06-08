@@ -22,7 +22,7 @@ AI agents are everywhere these days, but building one that actually works reliab
 
 This post walks through a code review agent built with LangGraph, with an emphasis on letting the model decide when to use tools instead of hard-coding a rigid script.
 
-> NOTE: This post focuses on building a single agent. If you want to take the next step into coordinated specialist agents, I cover that in [Building Multi-Agent LangGraph Flows with SAP Cloud SDK for AI](./2026-02-12-multi-agent-langgraph-flows.md).
+> NOTE: This post focuses on building a single agent. If you want to take the next step into coordinated specialist agents, I will cover that in the future blog post [Building Multi-Agent LangGraph Flows with SAP Cloud SDK for AI](./2026-02-12-multi-agent-langgraph-flows.md).
 
 This article is part 1 of a 4-part series on building code review agents with LangGraph:
 
