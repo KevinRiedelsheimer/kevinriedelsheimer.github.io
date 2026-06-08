@@ -22,6 +22,31 @@ layout: layouts/base.njk
 
 <p class="post-description-main">{{ description | safe }}</p>
 
+{% if series and seriesPosts and seriesPosts.length > 1 %}
+<section class="post-series" aria-labelledby="post-series-title">
+	<p class="post-series-eyebrow">Series</p>
+	<h2 id="post-series-title">{{ series.title }}</h2>
+	<ol class="post-series-list">
+		{% for entry in seriesPosts %}
+		<li class="post-series-item{% if entry.isCurrent %} is-current{% endif %}">
+			{% if entry.isCurrent %}
+			<span class="post-series-link" aria-current="page">
+				<span class="post-series-part">Part {{ entry.part }}</span>
+				<span class="post-series-entry-title">{{ entry.title }}</span>
+				<span class="post-series-current-label">Current</span>
+			</span>
+			{% else %}
+			<a href="{{ entry.url }}" class="post-series-link">
+				<span class="post-series-part">Part {{ entry.part }}</span>
+				<span class="post-series-entry-title">{{ entry.title }}</span>
+			</a>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ol>
+</section>
+{% endif %}
+
 <div class="post-content-wrapper">
 	<!-- Table of Contents -->
 	{% if content %}
@@ -142,7 +167,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	<script src="https://giscus.app/client.js" data-repo="kevinriedelsheimer/kevinriedelsheimer.github.io" data-repo-id="R_kgDOREESBQ" data-category="Announcements" data-category-id="DIC_kwDOREESBc4C2JFv" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script>
 </div>
 
-{%- if collections.posts %}
+{%- if seriesPrevious or seriesNext %}
+<ul class="links-nextprev">
+	{%- if seriesPrevious %}<li class="links-nextprev-prev">← Previous in series<br> <a href="{{ seriesPrevious.url }}">{{ seriesPrevious.fullTitle }}</a></li>{% endif %}
+	{%- if seriesNext %}<li class="links-nextprev-next">Next in series →<br><a href="{{ seriesNext.url }}">{{ seriesNext.fullTitle }}</a></li>{% endif %}
+</ul>
+{%- elif collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}

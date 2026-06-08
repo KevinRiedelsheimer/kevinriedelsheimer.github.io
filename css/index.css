@@ -674,6 +674,84 @@ header {
   font-style: italic;
 }
 
+/* Series Navigation */
+.post-series {
+  margin: 0 0 2.5rem;
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.post-series-eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--accent-color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-series h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+.post-series-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.post-series-item {
+  border-left: 3px solid var(--border-color);
+  padding-left: 1rem;
+}
+
+.post-series-item.is-current {
+  border-left-color: var(--accent-color);
+}
+
+.post-series-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+  text-decoration: none;
+}
+
+a.post-series-link {
+  color: inherit;
+}
+
+.post-series-part {
+  color: var(--accent-color-secondary);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.post-series-entry-title {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+a.post-series-link:hover .post-series-entry-title {
+  color: var(--accent-color);
+}
+
+.post-series-current-label {
+  color: var(--text-color-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.45rem;
+}
+
 /* Related Posts */
 .related-posts {
   margin: 3rem 0 2rem;
