@@ -1,7 +1,7 @@
 export default {
   title: "Kevin Riedelsheimer",
   url: "https://kevinriedelsheimer.com",
-  image: "me.png",
+  image: "favicon-preview.png",
   language: "en",
   description: "Praise the Omnissiah — may your code compile and your builds succeed.",
   author: {
