@@ -1,6 +1,6 @@
 ---
 title: A Stateful Code Review Agent with LangGraph and the SAP Cloud SDK for AI
-date: 2026-02-04
+date: 2026-06-08
 draft: false
 permalink: /blog/posts/2026/02/04/building-your-first-ai-agent-with-langgraph-and-the-sap-cloud-sdk-for-ai/
 tags:
@@ -17,7 +17,7 @@ AI agents are everywhere these days, but building one that actually works reliab
 
 This post walks through a code review agent built with LangGraph, with an emphasis on letting the model decide when to use tools instead of hard-coding a rigid script.
 
-> NOTE: This post focuses on building a single agent. Multi-agent systems are a different beast, and I'll cover that in a future post.
+> NOTE: This post focuses on building a single agent. If you want to take the next step into coordinated specialist agents, I cover that in [Building Multi-Agent LangGraph Flows with SAP Cloud SDK for AI](./2026-02-12-multi-agent-langgraph-flows.md).
 
 ## Why LangGraph?
 
@@ -374,7 +374,7 @@ The key takeaways:
 
 If you want an open source variant later, you do not need to redesign the agent. Keep the LangGraph state, nodes, and tools the same, and swap the model layer for a LangChain-compatible open source backend such as Ollama. In practice, that mostly means replacing the `ChatOpenAI` initialization, pointing it at your local or self-hosted model, and re-testing tool-calling behavior because open source models vary more in how reliably they request tools.
 
-The next post covers multi-agent systems, where several specialized agents work together on more complex tasks.
+If you want to keep going from here, the next step is [Building Multi-Agent LangGraph Flows with SAP Cloud SDK for AI](./2026-02-12-multi-agent-langgraph-flows.md), where several specialized agents work together on a more complex review workflow.
 
 ## Resources
 
